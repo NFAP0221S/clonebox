@@ -1,6 +1,6 @@
 import { ProfileIdPage } from '@/b.pages/profile-id';
 
-export default function page() {
+export default function Page() {
 
   return <ProfileIdPage />
 }
