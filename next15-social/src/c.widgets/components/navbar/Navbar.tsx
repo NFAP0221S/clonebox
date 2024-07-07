@@ -1,7 +1,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { MobileMenu } from "@/c.widgets/components/mobile-menu";
+import { MobileMenu } from "@/f.shared/components/mobile-menu";
 import { ClerkLoaded, ClerkLoading, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 export function Navbar() {

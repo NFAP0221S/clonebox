@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Navbar } from "@/f.shared/components/navbar";
+import { Navbar } from "@/c.widgets/components/navbar";
 
 export function MainLayout({
   children,
