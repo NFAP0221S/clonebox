@@ -1,7 +1,5 @@
-const Homepage = () => {
-  return (
-    <div className=''>Homepage</div>
-  )
-}
+import { MainPage } from "@/b.pages/main";
 
-export default Homepage
+export default function Page() {
+  return <MainPage />
+}
