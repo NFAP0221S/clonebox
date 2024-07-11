@@ -1,5 +1,6 @@
 import React from "react"
 import Image from "next/image"
+import { Comments } from "@/c.widgets/components/comments"
 
 export function Post() {
   return (
@@ -76,6 +77,7 @@ export function Post() {
           </div>
         </div>
       </div>
+      <Comments />
     </div>
   )
 }
