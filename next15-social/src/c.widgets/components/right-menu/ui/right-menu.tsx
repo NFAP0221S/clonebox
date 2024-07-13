@@ -1,7 +1,13 @@
 import React from 'react'
 
-export function RightMenu() {
+interface Props {
+  userId?: string
+}
+
+export function RightMenu({userId}: Props) {
   return (
-    <div>RightMenu</div>
+    <div className='flex flex-col gap-6'>
+
+    </div>
   )
 }
