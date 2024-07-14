@@ -1,10 +1,10 @@
 import React from "react"
 import Image from "next/image"
-import { Comments } from "@/c.widgets/components/comments"
+import { Comments } from "@/c.widgets/components/feed/comments"
 
 export function Post() {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4" title="포스트">
       {/* USER */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
@@ -15,7 +15,7 @@ export function Post() {
             height={40} 
             className="w-10 h-10 rounded-full" 
           />
-          <span className="font-medium">정규식</span>
+          <span className="font-medium">김xx</span>
         </div>
         <Image src="/more.png" alt='' width={16} height={16} />
       </div>
