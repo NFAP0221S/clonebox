@@ -7,7 +7,7 @@ interface Props {
 export function RightMenu({userId}: Props) {
   return (
     <div className='flex flex-col gap-6'>
-
+      RightMenu
     </div>
   )
 }
