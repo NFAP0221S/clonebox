@@ -1,4 +1,4 @@
-import { Post } from "@/c.widgets/components/feed/post";
+import { Post } from "@/c.widgets/components/feed/index";
 
 export function Feed() {
   return (

@@ -1,6 +1,6 @@
 import React from "react"
 import Image from "next/image"
-import { Comments } from "@/c.widgets/components/feed/comments"
+import { Comments } from "@/c.widgets/components/feed/index"
 
 export function Post() {
   return (

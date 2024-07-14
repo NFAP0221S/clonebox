@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ClerkLoaded, ClerkLoading, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import { MobileMenu } from "../../mobile-menu";
+import { MobileMenu } from "./mobile-menu";
 
 export function Navbar() {
   return (
