@@ -1,3 +1,4 @@
+import { $image } from "@/f.shared/dummy"
 import Image from "next/image"
 
 export function Comments() {
@@ -6,7 +7,7 @@ export function Comments() {
       {/* WRITE */}
       <div className="flex items-center gap-4">
         <Image 
-          src="https://images.pexels.com/photos/17351400/pexels-photo-17351400.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load" 
+          src={$image}
           alt="" 
           width={32} 
           height={32} 
@@ -33,7 +34,7 @@ export function Comments() {
         <div className='flex gap-4 justify-between mt-6'>
           {/* AVATAR */}
           <Image 
-            src="https://images.pexels.com/photos/17351400/pexels-photo-17351400.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load" 
+            src={$image}
             alt="" 
             width={40} 
             height={40} 

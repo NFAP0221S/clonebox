@@ -1,0 +1,1 @@
+export const $image = 'https://images.pexels.com/photos/17351400/pexels-photo-17351400.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load'

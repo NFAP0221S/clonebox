@@ -1,6 +1,7 @@
 import React from "react"
 import Image from "next/image"
 import { Comments } from "@/c.widgets/components/feed/index"
+import { $image } from "@/f.shared/dummy"
 
 export function Post() {
   return (
@@ -9,7 +10,7 @@ export function Post() {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
           <Image
-            src="https://images.pexels.com/photos/17351400/pexels-photo-17351400.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load" 
+            src={$image}
             alt='' 
             width={40} 
             height={40} 
@@ -23,7 +24,7 @@ export function Post() {
       <div className="flex flex-col gap-4">
         <div className="w-full min-h-96 relative">
           <Image 
-            src="https://images.pexels.com/photos/17351400/pexels-photo-17351400.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load" 
+            src={$image}
             alt='' 
             fill 
             className="object-cover rounded-md" 

@@ -1,3 +1,4 @@
+import { $image } from '@/f.shared/dummy'
 import Image from 'next/image'
 
 export function AddPost() {
@@ -5,7 +6,7 @@ export function AddPost() {
     <div className='p-4 bg-white shadow-md rounded-lg flex gap-4 justify-between text-sm' title='포스터 추가'>
       {/* AVATAR */}
       <Image
-        src="https://images.pexels.com/photos/17351400/pexels-photo-17351400.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+        src={$image}
         alt=""
         width={48}
         height={48}
