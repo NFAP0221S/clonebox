@@ -1,1 +1,1 @@
-fsd, react19, next 15 연습용 sns 클론
+next15-social: fsd 방법론, react v19, next v15 연습용 sns 클론
