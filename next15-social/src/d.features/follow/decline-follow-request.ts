@@ -3,7 +3,7 @@
 import prisma from "@/f.shared/lib/client";
 import { auth } from "@clerk/nextjs/server";
 
-export const declineFollowRequest = async (userId: string) => {
+export const declineFollowRequest = async ({ userId }: IDeclineFollowRequest) => {
   const { userId: currentUserId } = auth();
 
   if (!currentUserId) {

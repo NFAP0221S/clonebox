@@ -3,7 +3,7 @@
 import prisma from "@/f.shared/lib/client";
 import { auth } from "@clerk/nextjs/server";
 
-export const switchBlock = async (userId: string) => {
+export const switchBlock = async ({ userId }: ISwitchBlock) => {
   const { userId: currentUserId } = auth();
 
   if (!currentUserId) {

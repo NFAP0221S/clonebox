@@ -6,11 +6,7 @@ import { UserInfoCard } from './user-info-card'
 import { UserMediaCard } from './user-media-card'
 import { User } from '@prisma/client'
 
-interface Props {
-  user?: User
-}
-
-export function RightMenu({user}: Props) {
+export function RightMenu({user}: IRightMenu<User>) {
   return (
     <div className='flex flex-col gap-6'>
       {user && (

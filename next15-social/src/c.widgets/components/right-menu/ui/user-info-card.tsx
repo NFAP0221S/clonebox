@@ -6,11 +6,7 @@ import prisma from '@/f.shared/lib/client';
 import { UserInfoCardInteraction } from './user-info-card-interaction';
 import { formatDate } from '@/f.shared/utils/formatDate';
 
-interface Props {
-  user: User
-}
-
-export async function UserInfoCard({user}: Props) {
+export async function UserInfoCard({user}: IUserInfoCard<User>) {
   const formattedDate = formatDate(user.createdAt)
   
   let isUserBlocked = false;

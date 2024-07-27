@@ -1,14 +1,15 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { $image } from '@/f.shared/dummy'
-import { User } from '@prisma/client'
+import type { Post as PostType, User } from "@prisma/client";
 import prisma from '@/f.shared/lib/client'
 
-interface Props {
-  user: User
-}
+export type FeedPostType = PostType & { user: User } & {
+  likes: [{ userId: string }];
+} & {
+  _count: { comments: number };
+};
 
-export async function UserMediaCard({user}: Props) {
+export async function UserMediaCard({user}: IUserMediaCard<User>) {
 
   const postsWithMedia = await prisma.post.findMany({
     where: {

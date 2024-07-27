@@ -3,19 +3,12 @@
 import { switchFollow } from "@/d.features/follow/switch-follow";
 import { useOptimistic, useState } from "react";
 
-interface Props {
-  userId: string;
-  isUserBlocked: boolean;
-  isFollowing: boolean;
-  isFollowingSent: boolean;
-}
-
 export function UserInfoCardInteraction({
   userId,
   isUserBlocked,
   isFollowing,
   isFollowingSent,
-}: Props) {
+}: IUserInfoCardInteraction) {
 
   const [userState, setUserState] = useState({
     following: isFollowing,

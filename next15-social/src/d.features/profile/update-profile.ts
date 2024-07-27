@@ -4,10 +4,7 @@ import prisma from "@/f.shared/lib/client";
 import { auth } from "@clerk/nextjs/server";
 import { z } from "zod";
 
-export const updateProfile = async (
-  prevState: { success: boolean; error: boolean },
-  payload: { formData: FormData; cover: string }
-) => {
+export const updateProfile = async ({ prevState, payload }: IUpdateProfile) => {
   const { formData, cover } = payload;
   const fields = Object.fromEntries(formData);
 

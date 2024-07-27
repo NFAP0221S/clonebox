@@ -3,7 +3,7 @@
 import prisma from "@/f.shared/lib/client";
 import { auth } from "@clerk/nextjs/server";
 
-export const addComment = async (postId: number, desc: string) => {
+export const addComment = async ({ postId, desc }: IAddComment) => {
   const { userId } = auth();
 
   if (!userId) throw new Error("User is not authenticated!");
