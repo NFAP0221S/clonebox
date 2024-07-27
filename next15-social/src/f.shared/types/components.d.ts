@@ -28,7 +28,7 @@ interface IAd {
 }
 
 interface IUserInfoCardInteraction {
-  userId: string;
+  userId: IAwitchFollow;
   isUserBlocked: boolean;
   isFollowing: boolean;
   isFollowingSent: boolean;

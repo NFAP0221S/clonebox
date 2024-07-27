@@ -1,6 +1,6 @@
 'use client'
 
-import { switchFollow } from "@/d.features/follow/switch-follow";
+import { switchFollow } from "@/d.features/action/follow/switch-follow";
 import { useOptimistic, useState } from "react";
 
 export function UserInfoCardInteraction({
