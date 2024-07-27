@@ -1,45 +1,28 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import prisma from '@/f.shared/lib/client';
 import { User } from '@prisma/client'
 import { auth } from '@clerk/nextjs/server';
 import { UserInfoCardInteraction } from './user-info-card-interaction';
 import { formatDate } from '@/f.shared/utils/formatDate';
+import { isUserBlocked as isUserBlockedFn } from '@/e.entities/action/block/block-service';
+import { 
+  isFollowing as isFollowingFn,
+  isFollowingRequestSent as isFollowingRequestSentFn
+} from '@/e.entities/action/follow/follow-service';
+
 
 export async function UserInfoCard({user}: IUserInfoCard<User>) {
   const formattedDate = formatDate(user.createdAt)
   
+  const { userId: currentUserId } = auth();
   let isUserBlocked = false;
   let isFollowing = false;
   let isFollowingSent = false;
 
-  const { userId: currentUserId } = auth();
-
   if (currentUserId) {
-    const blockRes = await prisma.block.findFirst({
-      where: {
-        blockerId: currentUserId,
-        blockedId: user.id,
-      },
-    });
-
-    blockRes ? (isUserBlocked = true) : (isUserBlocked = false);
-    const followRes = await prisma.follower.findFirst({
-      where: {
-        followerId: currentUserId,
-        followingId: user.id,
-      },
-    });
-
-    followRes ? (isFollowing = true) : (isFollowing = false);
-    const followReqRes = await prisma.followRequest.findFirst({
-      where: {
-        senderId: currentUserId,
-        receiverId: user.id,
-      },
-    });
-
-    followReqRes ? (isFollowingSent = true) : (isFollowingSent = false);
+    isUserBlocked = await isUserBlockedFn(currentUserId, user.id);
+    isFollowing = await isFollowingFn(currentUserId, user.id);
+    isFollowingSent = await isFollowingRequestSentFn(currentUserId, user.id);
   }
   
   return (
