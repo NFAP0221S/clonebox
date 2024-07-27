@@ -1,7 +1,8 @@
 'use client'
 
+import { switchBlock } from "@/d.features/action/block/switch-block";
 import { switchFollow } from "@/d.features/action/follow/switch-follow";
-import { useOptimistic, useState } from "react";
+import { useOptimistic, useReducer, useState } from "react";
 
 export function UserInfoCardInteraction({
   userId,
@@ -10,22 +11,62 @@ export function UserInfoCardInteraction({
   isFollowingSent,
 }: IUserInfoCardInteraction) {
 
-  const [userState, setUserState] = useState({
+  const initialState = {
     following: isFollowing,
     blocked: isUserBlocked,
     followingRequestSent: isFollowingSent,
-  })
+  };
+
+  const [userState, dispatch] = useReducer((state: IUserState, action: Action) => {
+    switch (action.type) {
+      case 'TOGGLE_FOLLOWING':
+        return {
+          ...state,
+          following: state.following ? false : state.following,
+          followingRequestSent: !state.following && !state.followingRequestSent,
+        };
+      case 'BLOCK':
+        return {
+          ...state,
+          blocked: !state.blocked,
+        };
+      default:
+        return state;
+    }
+  }, initialState);
+
+  const updateState = (state: IUserState, value: TFollowBlock) => {
+    if (value === "follow") {
+      return {
+        ...state,
+        following: state.following && false,
+        followingRequestSent:
+          !state.following && !state.followingRequestSent ? true : false,
+      };
+    } else {
+      return { ...state, blocked: !state.blocked };
+    }
+  };
+
+  const [optimisticState, switchOptimisticState] = useOptimistic(
+    userState,
+    updateState
+  );
 
   const follow = async () => {
-    // switchOptimisticState("follow");
+    switchOptimisticState("follow");
     try {
       await switchFollow(userId);
-      setUserState((prev) => ({
-        ...prev,
-        following: prev.following && false,
-        followingRequestSent:
-          !prev.following && !prev.followingRequestSent ? true : false,
-      }));
+      dispatch({ type: 'BLOCK' });
+    } catch (err) {}
+  };
+
+
+  const block = async () => {
+    switchOptimisticState("block");
+    try {
+      await switchBlock(userId);
+      dispatch({ type: 'TOGGLE_FOLLOWING' });
     } catch (err) {}
   };
 
@@ -34,21 +75,19 @@ export function UserInfoCardInteraction({
       <form action={follow}>
         <button className="w-full bg-blue-500 text-white text-sm rounded-md p-2">
           {userState.following
-          // {optimisticState.following
             ? "Following"
             : userState.followingRequestSent
-            // : optimisticState.followingRequestSent
             ? "Friend Request Sent"
             : "Follow"}
         </button>
       </form>
-      {/* <form action={block} className="self-end ">
+      <form action={block} className="self-end ">
         <button>
           <span className="text-red-400 text-xs cursor-pointer">
-            {optimisticState.blocked ? "Unblock User" : "Block User"}
+            {userState.blocked ? "Unblock User" : "Block User"}
           </span>
         </button>
-      </form> */}
+      </form>
     </>
   )
 }

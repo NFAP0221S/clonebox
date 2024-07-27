@@ -1,5 +1,6 @@
 type TLeftMenu = "home" | "profile"
 type TSize = "sm" | "md" | "lg"
+type TFollowBlock = "follow" | "block"
 
 interface IProfilePage {
   params: {
@@ -28,10 +29,10 @@ interface IAd {
 }
 
 interface IUserInfoCardInteraction {
-  userId: IAwitchFollow;
-  isUserBlocked: boolean;
-  isFollowing: boolean;
-  isFollowingSent: boolean;
+  userId: string
+  isUserBlocked: boolean
+  isFollowing: boolean
+  isFollowingSent: boolean
 }
 
 interface IUser {user: string;}
