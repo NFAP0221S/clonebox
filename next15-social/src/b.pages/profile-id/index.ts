@@ -1,1 +1,0 @@
-export { ProfileIdPage } from './ui/profile-id-page'

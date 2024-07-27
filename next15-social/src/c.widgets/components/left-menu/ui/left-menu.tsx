@@ -3,12 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Ad } from '../../right-menu/ui/ad';
 
-type Ttype = "home" | "profile"
-interface Props {
-  type: Ttype
-}
-
-export function LeftMenu({ type }: Props) {
+export function LeftMenu({ type }: ILeftMenu) {
   return (
     <div className='flex flex-col gap-6'>
       {type === "home" && <ProfileCard />}
