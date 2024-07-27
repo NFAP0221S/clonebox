@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { User } from '@prisma/client'
 import { auth } from '@clerk/nextjs/server';
-import { UserInfoCardInteraction } from './user-info-card-interaction';
+import { UserInfoCardInteraction } from '@/d.features/user-info';
 import { formatDate } from '@/f.shared/utils/formatDate';
 import { isUserBlocked as isUserBlockedFn } from '@/e.entities/action/block/block-service';
 import { 

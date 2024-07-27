@@ -1,8 +1,8 @@
 'use client'
 
-import { switchBlock } from "@/d.features/action/block/switch-block";
-import { switchFollow } from "@/d.features/action/follow/switch-follow";
-import { useOptimistic, useReducer, useState } from "react";
+import { switchBlock } from "@/e.entities/action/block/switch-block";
+import { switchFollow } from "@/e.entities/action/follow/switch-follow";
+import { useOptimistic, useReducer } from "react";
 
 export function UserInfoCardInteraction({
   userId,
@@ -74,9 +74,9 @@ export function UserInfoCardInteraction({
     <>
       <form action={follow}>
         <button className="w-full bg-blue-500 text-white text-sm rounded-md p-2">
-          {userState.following
+          {optimisticState.following
             ? "Following"
-            : userState.followingRequestSent
+            : optimisticState.followingRequestSent
             ? "Friend Request Sent"
             : "Follow"}
         </button>
@@ -84,7 +84,7 @@ export function UserInfoCardInteraction({
       <form action={block} className="self-end ">
         <button>
           <span className="text-red-400 text-xs cursor-pointer">
-            {userState.blocked ? "Unblock User" : "Block User"}
+            {optimisticState.blocked ? "Unblock User" : "Block User"}
           </span>
         </button>
       </form>
