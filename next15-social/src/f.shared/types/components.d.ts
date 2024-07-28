@@ -39,4 +39,5 @@ interface IUser {user: string;}
 interface IUserContainer<T = IUser> {user: T;}
 interface IUserInfoCard<T = IUser> extends IUserContainer<T> {}
 interface IUserMediaCard<T = IUser> extends IUserContainer<T> {}
+interface IUpdateUser<T = IUser> extends IUserContainer<T> {}
 

@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { User } from '@prisma/client'
 import { auth } from '@clerk/nextjs/server';
-import { UserInfoCardInteraction } from '@/d.features/user-info';
+import { UpdateUser, UserInfoCardInteraction } from '@/d.features/user-info';
 import { formatDate } from '@/f.shared/utils/formatDate';
 import { isUserBlocked as isUserBlockedFn } from '@/e.entities/action/block/block-service';
 import { 
@@ -30,7 +30,13 @@ export async function UserInfoCard({user}: IUserInfoCard<User>) {
       {/* TOP */}
       <div className='flex justify-between items-center font-medium'>
         <span className='text-gray-500'>User Information</span>
-        <Link href='/' className='text-blue-500 text-xs'>See all</Link>
+        {currentUserId === user.id ? (
+          <UpdateUser user={user}/>
+        ) : (
+          <Link href="/" className="text-blue-500 text-xs">
+            See all
+          </Link>
+        )}
       </div>
       {/* BOTTOM */}
       <div className='flex flex-col gap-4 text-gray-500'>
