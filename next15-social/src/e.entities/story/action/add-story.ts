@@ -4,7 +4,7 @@ import prisma from "@/f.shared/lib/client";
 import { auth } from "@clerk/nextjs/server";
 
 
-export const addStory = async ({ img }: IAddStory) => {
+export const addStory = async (img: string) => {
   const { userId } = auth();
 
   if (!userId) throw new Error("User is not authenticated!");

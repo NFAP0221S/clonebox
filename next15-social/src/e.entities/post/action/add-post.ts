@@ -5,7 +5,7 @@ import { revalidatePath } from "next/cache";
 import prisma from "@/f.shared/lib/client";
 import { auth } from "@clerk/nextjs/server";
 
-export const addPost = async ({ formData, img }: IAddPost) => {
+export const addPost = async (formData: FormData, img: string) => {
   const desc = formData.get("desc") as string;
 
   const Desc = z.string().min(1).max(255);

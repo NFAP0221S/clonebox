@@ -3,7 +3,7 @@
 import prisma from "@/f.shared/lib/client";
 import { auth } from "@clerk/nextjs/server";
 
-export const switchLike = async ({ postId }: ISwitchLike) => {
+export const switchLike = async (postId: number) => {
   const { userId } = auth();
 
   if (!userId) throw new Error("User is not authenticated!");
