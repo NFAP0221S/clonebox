@@ -4,11 +4,11 @@ import { User } from '@prisma/client'
 import { auth } from '@clerk/nextjs/server';
 import { UpdateUser, UserInfoCardInteraction } from '@/d.features/user-info';
 import { formatDate } from '@/f.shared/utils/formatDate';
-import { isUserBlocked as isUserBlockedFn } from '@/e.entities/action/block/block-service';
+import { isUserBlocked as isUserBlockedFn } from '@/e.entities/block';
 import { 
   isFollowing as isFollowingFn,
   isFollowingRequestSent as isFollowingRequestSentFn
-} from '@/e.entities/action/follow/follow-service';
+} from '@/e.entities/follow';
 
 
 export async function UserInfoCard({user}: IUserInfoCard<User>) {

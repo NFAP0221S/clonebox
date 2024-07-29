@@ -1,7 +1,7 @@
 'use client'
 
-import { switchBlock } from "@/e.entities/action/block/switch-block";
-import { switchFollow } from "@/e.entities/action/follow/switch-follow";
+import { switchBlock } from "@/e.entities/block";
+import { switchFollow } from "@/e.entities/follow";
 import { useOptimistic, useReducer } from "react";
 
 export function UserInfoCardInteraction({
