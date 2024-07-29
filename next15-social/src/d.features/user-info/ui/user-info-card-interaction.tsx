@@ -57,7 +57,7 @@ export function UserInfoCardInteraction({
     switchOptimisticState("follow");
     try {
       await switchFollow(userId);
-      dispatch({ type: 'BLOCK' });
+      dispatch({ type: 'TOGGLE_FOLLOWING' });
     } catch (err) {}
   };
 
@@ -66,7 +66,7 @@ export function UserInfoCardInteraction({
     switchOptimisticState("block");
     try {
       await switchBlock(userId);
-      dispatch({ type: 'TOGGLE_FOLLOWING' });
+      dispatch({ type: 'BLOCK' });
     } catch (err) {}
   };
 
