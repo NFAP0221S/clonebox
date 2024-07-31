@@ -1,8 +1,14 @@
 import Image from "next/image"
 import React, { Suspense } from "react"
+import { Post as PostType, User } from "@prisma/client";
 import { Comments } from "@/c.widgets/components/feed/index"
 import { auth } from "@clerk/nextjs/server";
-import { FeedPostType } from "@/f.shared/types/type";
+
+type FeedPostType = PostType & { user: User } & {
+  likes: [{ userId: string }];
+} & {
+  _count: { comments: number };
+};
 
 export function Post({ post }: IPost<FeedPostType>) {
   const { userId } = auth();
