@@ -3,6 +3,7 @@ import React, { Suspense } from "react"
 import { Post as PostType, User } from "@prisma/client";
 import { Comments } from "@/c.widgets/components/feed/index"
 import { auth } from "@clerk/nextjs/server";
+import { PostInteraction } from "@/d.features/post";
 
 type FeedPostType = PostType & { user: User } & {
   likes: [{ userId: string }];
@@ -48,11 +49,11 @@ export function Post({ post }: IPost<FeedPostType>) {
       </div>
       {/* INTERACTION */}
       <Suspense fallback="Loading...">
-        {/* <PostInteraction
+        <PostInteraction
           postId={post.id}
           likes={post.likes.map((like) => like.userId)}
           commentNumber={post._count.comments}
-        /> */}
+        />
       </Suspense>
       <Suspense fallback="Loading...">
         {/* <Comments postId={post.id} /> */}
