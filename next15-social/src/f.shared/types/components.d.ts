@@ -15,6 +15,18 @@ interface IFeed {
 interface IPost<T> {
   post: T
 }
+interface IPostInteraction {
+  postId: number
+  likes: string[]
+  commentNumber: number
+}
+interface IComment {
+  postId: number
+}
+interface ICommentList<T> {
+  comments: T[];
+  postId: number;
+}
 
 interface ILeftMenu {
   type: TLeftMenu

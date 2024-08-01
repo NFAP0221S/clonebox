@@ -7,55 +7,55 @@
   resolved "https://registry.yarnpkg.com/@alloc/quick-lru/-/quick-lru-5.2.0.tgz#7bf68b20c0a350f936915fcae06f58e32007ce30"
   integrity sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==
 
-"@clerk/backend@1.4.3":
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/@clerk/backend/-/backend-1.4.3.tgz#2f734b86294b6479c0b29d551e39fb7e6772e6ca"
-  integrity sha512-wj4qsZO6iNiY9vF7vLH5v1f3oLh1yCLgFa0PedLzJAIJgepZl23C1/ubrRm7vyewjQEMHZwod4816mZlHDfoqA==
+"@clerk/backend@1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@clerk/backend/-/backend-1.5.0.tgz#12318117d2d6f29ece78dddc7eb9f68ad583df7d"
+  integrity sha512-uJUcA4oIDfTkjhjcjnlnarjuLXp5rVvtXB1/HtFKLXfvm8SveH5D3w97IeiUDNMvggxBo1Q/faBDBjEJxTV9Cw==
   dependencies:
-    "@clerk/shared" "2.4.1"
-    "@clerk/types" "4.9.1"
+    "@clerk/shared" "2.4.2"
+    "@clerk/types" "4.10.0"
     cookie "0.5.0"
     snakecase-keys "5.4.4"
     tslib "2.4.1"
 
-"@clerk/clerk-react@5.2.10":
-  version "5.2.10"
-  resolved "https://registry.yarnpkg.com/@clerk/clerk-react/-/clerk-react-5.2.10.tgz#1590771cbc80bf89af87b073d70f6456c1e2f9b2"
-  integrity sha512-qJZ79aiB80cUuqccKqhk6QImGIji4y1bjK1xbGnqiAthtMegxFShLJwEsrF7nl0Rw5yM9cphiwETEqBWfIPL4Q==
+"@clerk/clerk-react@5.3.0":
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/@clerk/clerk-react/-/clerk-react-5.3.0.tgz#0674739ffc35d13cbde0957f1bd8588c9891c07b"
+  integrity sha512-sKJrIHwkfeemSolI4pU+jwNFYFG+HfwZ+Anx1JvnvlLDELUrsQMFCVOKCE7TOEs+Y/9loEK7xFdanzvxL+uasA==
   dependencies:
-    "@clerk/shared" "2.4.1"
-    "@clerk/types" "4.9.1"
+    "@clerk/shared" "2.4.2"
+    "@clerk/types" "4.10.0"
     tslib "2.4.1"
 
 "@clerk/nextjs@^5.2.2":
-  version "5.2.8"
-  resolved "https://registry.yarnpkg.com/@clerk/nextjs/-/nextjs-5.2.8.tgz#c70618e3df9290e9d969383773b5887798d8a4b0"
-  integrity sha512-dy4K1e2ygWBsDjnLmQKtoeRpoToCNFRXMu6GN4VesE9/mOYNXKiyJE2/DY6lGV3oR2f8Qr9YjcXzphRnf1d/OQ==
+  version "5.2.10"
+  resolved "https://registry.yarnpkg.com/@clerk/nextjs/-/nextjs-5.2.10.tgz#f3388186976f6d7cf350a1f28eaad3c25bd31080"
+  integrity sha512-P2oxgrE7HfR5SLGAEGcuzstiWggyuRgqdytWo9NdKD/el8LYeuxey6FcIzNNzndWyTik7ERXSKG4fVrIrHnv9g==
   dependencies:
-    "@clerk/backend" "1.4.3"
-    "@clerk/clerk-react" "5.2.10"
-    "@clerk/shared" "2.4.1"
-    "@clerk/types" "4.9.1"
+    "@clerk/backend" "1.5.0"
+    "@clerk/clerk-react" "5.3.0"
+    "@clerk/shared" "2.4.2"
+    "@clerk/types" "4.10.0"
     crypto-js "4.2.0"
     path-to-regexp "6.2.2"
     server-only "0.0.1"
     tslib "2.4.1"
 
-"@clerk/shared@2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@clerk/shared/-/shared-2.4.1.tgz#838d6ab2322f97eba9364a6a984055161a5b926b"
-  integrity sha512-sApuz6hDRIai4Jwo/fBcihX74+DdrKLt08LkEVrooh/7zc0ipDOSGlqmAy15yNuKPaxpemp/9nW4T8gq6uIr9Q==
+"@clerk/shared@2.4.2":
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/@clerk/shared/-/shared-2.4.2.tgz#6c5f39e2918de54a9ce7ef86ccbf78c22039d859"
+  integrity sha512-8AZg7Qus7nGBwhbdJINV1NR0vAbOYtv/m8C9VdASHW/DzamNJvyf9d61E1DLZGTTjQw/Fja9zolq9CcWT5d6NA==
   dependencies:
-    "@clerk/types" "4.9.1"
+    "@clerk/types" "4.10.0"
     glob-to-regexp "0.4.1"
     js-cookie "3.0.5"
     std-env "^3.7.0"
     swr "^2.2.0"
 
-"@clerk/types@4.9.1":
-  version "4.9.1"
-  resolved "https://registry.yarnpkg.com/@clerk/types/-/types-4.9.1.tgz#9fddc160fdc729caa71bdacce717b99af01fda2c"
-  integrity sha512-fCmqzPBFh0rH9TlUVPpvPW225DtGJDuCv5GecwuuzD8hcgwGetTfRSDRNl5Dub5aJuqYWGQQCCnKfnfCrhZvrA==
+"@clerk/types@4.10.0":
+  version "4.10.0"
+  resolved "https://registry.yarnpkg.com/@clerk/types/-/types-4.10.0.tgz#c065d5c2c0c3e89839480f8b95f2429e2668f831"
+  integrity sha512-Yy4m+aCrvVHT8BVNGDi40hcSUTwMf5o+cBHhAQQTofzCikc+DRI6yL7aYT6nf2YJ5gfm7WdeUwPM8Zz08TDzNA==
   dependencies:
     csstype "3.1.1"
 
@@ -79,7 +79,7 @@
   resolved "https://registry.yarnpkg.com/@cloudinary-util/util/-/util-3.0.2.tgz#a86334eeec9912cf90054f5688a7d10fca9fe952"
   integrity sha512-EMmspJLVFn9hX92DaK/yuSzSUXF/BJ88crzN8vT1qCaJMMWKapGNo2HZ6YNgG69PP/Jngdk0mTINDU+GP3A1CA==
 
-"@cloudinary/transformation-builder-sdk@^1.10.0", "@cloudinary/transformation-builder-sdk@^1.13.0":
+"@cloudinary/transformation-builder-sdk@^1.10.0", "@cloudinary/transformation-builder-sdk@^1.14.0":
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/@cloudinary/transformation-builder-sdk/-/transformation-builder-sdk-1.14.1.tgz#aa2a75b1c04ddba84f92d2ac3ce29d29a8c1cbca"
   integrity sha512-z49To4r3byg7zHsOGKsw/nHef5B9W3wSBdDsGoY7JOj75kbvmSlP4MCkS0JU3Bv57EvYYw5ymalPz+bvRXmPlA==
@@ -94,11 +94,11 @@
     "@cloudinary/transformation-builder-sdk" "^1.10.0"
 
 "@cloudinary/url-gen@^1.7.0":
-  version "1.19.0"
-  resolved "https://registry.yarnpkg.com/@cloudinary/url-gen/-/url-gen-1.19.0.tgz#da8b0ec12a33301482a71e309a19401d241b1770"
-  integrity sha512-3WSqYAMEe8lcYMFmkNPhOfv6Ql76mpf8O7YEC+CCaoIYrfBubzzeF8yENCaZK9tFJEHvMepI+uWWfilNrz48XA==
+  version "1.20.0"
+  resolved "https://registry.yarnpkg.com/@cloudinary/url-gen/-/url-gen-1.20.0.tgz#1b4c2433fda9d14a515ba6582d10243b9fc64ad9"
+  integrity sha512-SWtxDOZeROocIYhubtlrSvKlf1H7wBeVaIWqOOvz8TxbHvMLZanRHyNUv8YSxIsrzrjkLk1sI0Q2fr+6FkcqzA==
   dependencies:
-    "@cloudinary/transformation-builder-sdk" "^1.13.0"
+    "@cloudinary/transformation-builder-sdk" "^1.14.0"
 
 "@emnapi/runtime@^1.1.1":
   version "1.2.0"
@@ -800,9 +800,9 @@ camelcase-css@^2.0.1:
   integrity sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA==
 
 caniuse-lite@^1.0.30001579:
-  version "1.0.30001644"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001644.tgz#bcd4212a7a03bdedba1ea850b8a72bfe4bec2395"
-  integrity sha512-YGvlOZB4QhZuiis+ETS0VXR+MExbFf4fZYYeMTEE0aTQd/RdIjkTyZjLrbYVKnHzppDvnOhritRVv+i7Go6mHw==
+  version "1.0.30001646"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001646.tgz#d472f2882259ba032dd73ee069ff01bfd059b25d"
+  integrity sha512-dRg00gudiBDDTmUhClSdv3hqRfpbOnU28IpI1T6PBTLWa+kOj0681C8uML3PifYfREuBrVjDGhL3adYpBT6spw==
 
 chalk@^4.0.0:
   version "4.1.2"
@@ -2177,10 +2177,10 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
-next-cloudinary@^6.6.2:
-  version "6.6.2"
-  resolved "https://registry.yarnpkg.com/next-cloudinary/-/next-cloudinary-6.6.2.tgz#ff1e75b1306c5b68cf298c82a672fc4ddeece252"
-  integrity sha512-MbI5WpSk4dj9YnRgDp1C7vjtMivqOdkoR/jcmjIGR2Zth5RqGgiTpi7ee87d9pEdrfuJxdDzv27KA4s8tAVQkQ==
+next-cloudinary@^6.7.0:
+  version "6.7.0"
+  resolved "https://registry.yarnpkg.com/next-cloudinary/-/next-cloudinary-6.7.0.tgz#f873efc1ccba9af0e93c9c789c54e1c0504c8cc0"
+  integrity sha512-M01iJZMsU7e/szWXWLC/B5mxQPA3bIGmyZGNYS3vYC25CBn1koJXbMbx0KctQ4sAcNu8ccuUPE5Dibv+cHmyOw==
   dependencies:
     "@cloudinary-util/types" "1.0.5"
     "@cloudinary-util/url-loader" "5.3.1"
@@ -2931,9 +2931,9 @@ svix-fetch@^3.0.0:
     whatwg-fetch "^3.4.1"
 
 svix@^1.25.0:
-  version "1.25.0"
-  resolved "https://registry.yarnpkg.com/svix/-/svix-1.25.0.tgz#e441dae64bcdbeccb1b8d94c456cf43c64aa3dec"
-  integrity sha512-uW9xnwLqxfiUGwoWphKfthnymp7m14D4tdl1S+7MrH6A++ov/E3ONqLKS/6okOarMre64twxMbsg/QlT0PpnLA==
+  version "1.26.0"
+  resolved "https://registry.yarnpkg.com/svix/-/svix-1.26.0.tgz#b0d7c78789c0e60e6ac5ec115e0063ffe8efa7eb"
+  integrity sha512-vPo8JWJwCiX7s05rm1hYxDl/fe7GydGHTJGXkoqlTd6sw+kFPZgAPA8gTJPz3x2LtR6Q9KrYlF0dzQnSwC3D9Q==
   dependencies:
     "@stablelib/base64" "^1.0.0"
     es6-promise "^4.2.4"

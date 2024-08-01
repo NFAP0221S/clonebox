@@ -5,15 +5,7 @@ import { useAuth } from "@clerk/nextjs";
 import Image from "next/image";
 import { useOptimistic, useState } from "react";
 
-export function PostInteraction({
-  postId,
-  likes,
-  commentNumber,
-}: {
-  postId: number;
-  likes: string[];
-  commentNumber: number;
-}) {
+export function PostInteraction({ postId, likes, commentNumber }: IPostInteraction) {
   const { isLoaded, userId } = useAuth();
   const [likeState, setLikeState] = useState({
     likeCount: likes.length,
