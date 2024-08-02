@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { $image } from '@/f.shared/dummy'
 
 export function BirthDays() {
   return (
@@ -13,7 +12,7 @@ export function BirthDays() {
       <div className='flex items-center justify-between'>
         <div className='flex items-center gap-4'>
           <Image 
-            src={$image} 
+            src='https://images.pexels.com/photos/18207381/pexels-photo-18207381/free-photo-of-window-in-bar.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load'
             width={40} 
             height={40} 
             alt='' 
