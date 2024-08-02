@@ -39,6 +39,10 @@ interface IRightMenu<T>  {
 interface IAd {
   size: TSize
 }
+interface IStoryList<T> {
+  stories: T[]
+  userId: string
+}
 
 interface IUserInfoCardInteraction {
   userId: string

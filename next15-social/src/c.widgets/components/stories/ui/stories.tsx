@@ -1,20 +1,41 @@
-import { $image } from "@/f.shared/dummy";
-import Image from "next/image";
+import prisma from "@/f.shared/lib/client";
+import { auth } from "@clerk/nextjs/server";
+import { StoryList } from "./story-list";
 
-export function Stories() {
+export async function Stories() {
+  const { userId: currentUserId } = auth();
+
+  if (!currentUserId) return null;
+
+  const stories = await prisma.story.findMany({
+    where: {
+      expiresAt: {
+        gt: new Date(),
+      },
+      OR: [
+        {
+          user: {
+            followers: {
+              some: {
+                followerId: currentUserId,
+              },
+            },
+          },
+        },
+        {
+          userId: currentUserId,
+        },
+      ],
+    },
+    include: {
+      user: true,
+    },
+  });
   return (
-    <div className="p-4 bg-white rounded-lg shadow-md overflow-scroll text-xs scrollbar-hide" title="스토리">
+    <div className="p-4 bg-white rounded-lg shadow-md overflow-scroll text-xs scrollbar-hide">
       <div className="flex gap-8 w-max">
-        {/* <StoryList stories={stories} userId={currentUserId}/> */}
-        <div className='flex flex-col items-center gap-2 cursor-pointer'>
-          <Image src={$image} alt="" width={80} height={80} className="w-20 h-20 rounded-full ring-2" />
-          <span className="font-medium">이xx</span>
-        </div>
-        <div className='flex flex-col items-center gap-2 cursor-pointer'>
-          <Image src={$image} alt="" width={80} height={80} className="w-20 h-20 rounded-full ring-2" />
-          <span className="font-medium">박xx</span>
-        </div>
+        <StoryList stories={stories} userId={currentUserId}/>
       </div>
     </div>
   );
-}
+};
