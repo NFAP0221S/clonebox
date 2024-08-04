@@ -2,7 +2,7 @@
 
 import React, { useCallback, useState } from 'react';
 import { useMyPresence, useOthers } from "@liveblocks/react/suspense";
-import { LiveCurosrs } from './cursor';
+import { CursorChat, LiveCurosrs } from './cursor';
 import { CursorMode, CursorState } from '@/shared/types/type';
 
 export const Live = () => {
@@ -36,6 +36,9 @@ export const Live = () => {
 
   // 마우스 포인터가 요소를 벗어날 때 호출되는 함수
   const handlePointerLeave = useCallback(() => {
+    setCursorState({
+      mode: CursorMode.Hidden,
+    });
     // 커서와 메시지를 null로 업데이트하여 숨김
     updateMyPresence({
       cursor: null,
@@ -76,6 +79,14 @@ export const Live = () => {
         <h1 className="text-2xl text-white">
           라이브블럭 피그마 클론
         </h1>
+        {cursor && (
+          <CursorChat
+            cursor={cursor}
+            cursorState={cursorState}
+            setCursorState={setCursorState}
+            updateMyPresence={updateMyPresence}
+          />
+        )}
         <LiveCurosrs others={others} /> {/* 다른 사용자의 커서를 표시하는 컴포넌트 */}
     </div>
   )
