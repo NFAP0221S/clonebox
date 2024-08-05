@@ -1,6 +1,4 @@
-import { Room } from "./room";
-import { CollaborativeApp } from "./collaborative-app";
-import { Live } from "./components/live";
+import { Live } from "@/pages/live";
 
 const Home = () => {
   return (

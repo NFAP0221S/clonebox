@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { CursorChatProps, CursorMode } from '@/shared/types/type';
-import CursorSVG from '../../../../../public/assets/CursorSVG';
+import CursorSVG from '@/../public/assets/CursorSVG';
 
 export const CursorChat = ({ cursor, cursorState, setCursorState, updateMyPresence }: CursorChatProps) => {
 

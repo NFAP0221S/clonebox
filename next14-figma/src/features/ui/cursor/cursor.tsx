@@ -1,5 +1,5 @@
 import React from 'react'
-import CursorSVG from '../../../../../public/assets/CursorSVG';
+import CursorSVG from '@/../public/assets/CursorSVG';
 
 type Props = {
   color: string;
