@@ -3,7 +3,7 @@
 import React, { useCallback, useState } from 'react';
 import { useMyPresence, useOthers } from "@liveblocks/react/suspense";
 import { CursorMode, CursorState } from '@/shared/types/type';
-import { CursorChat, LiveCurosrs } from '@/features';
+import { CursorChat, LiveCurosrs } from '@/features/cursor';
 
 export const Live = () => {
   const others = useOthers(); // 다른 사용자 정보를 가져옴
