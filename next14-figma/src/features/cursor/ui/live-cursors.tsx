@@ -3,7 +3,7 @@ import { LiveCursorProps } from '@/shared/types/type'
 import React from 'react'
 import { Cursor } from './cursor';
 
-export const LiveCurosrs = ({ others }: LiveCursorProps) => {
+export const LiveCursors = ({ others }: LiveCursorProps) => {
   return others.map(({ connectionId, presence }) => {
     if (presence == null || !presence?.cursor) {
       return null;

@@ -2,8 +2,9 @@
 
 import React, { useCallback, useState } from 'react';
 import { useMyPresence, useOthers } from "@liveblocks/react/suspense";
-import { CursorMode, CursorState } from '@/shared/types/type';
-import { CursorChat, LiveCurosrs } from '@/features/cursor';
+import { CursorMode, CursorState, Reaction } from '@/shared/types/type';
+import { CursorChat, LiveCursors } from '@/features/cursor';
+import { ReactionSelector } from '@/features/reaction';
 
 export const Live = () => {
   const others = useOthers(); // 다른 사용자 정보를 가져옴
@@ -13,6 +14,14 @@ export const Live = () => {
   const [cursorState, setCursorState] = useState<CursorState>({
     mode: CursorMode.Hidden, // 초기 커서 모드는 Hidden으로 설정
   });
+  
+  // store the reactions created on mouse click
+  const [reactions, setReactions] = useState<Reaction[]>([]);
+
+  // set the reaction of the cursor
+  const setReaction = useCallback((reaction: string) => {
+    setCursorState({ mode: CursorMode.Reaction, reaction, isPressed: false });
+  }, []);
 
   // 마우스 포인터가 움직일 때 호출되는 함수
   const handlePointerMove = useCallback((event: React.PointerEvent) => {
@@ -87,7 +96,15 @@ export const Live = () => {
             updateMyPresence={updateMyPresence}
           />
         )}
-        <LiveCurosrs others={others} /> {/* 다른 사용자의 커서를 표시하는 컴포넌트 */}
+        
+        {cursorState.mode === CursorMode.ReactionSelector && (
+          <ReactionSelector
+            setReaction={(reaction) => {
+              setReaction(reaction);
+            }}
+          />
+        )}
+        <LiveCursors others={others} /> {/* 다른 사용자의 커서를 표시하는 컴포넌트 */}
     </div>
   )
 }
